@@ -12,13 +12,13 @@
         </div>
         <div>
           <mat-form-field>
-            <input matInput formControlName="name" placeholder="name" #symbol
+            <input matInput formControlName="symbol" placeholder="Symbol" #symbol
               (keyup.esc)="close()" (keyup.enter)="saveAlert()">
           </mat-form-field>
         </div>
         <div>
           <mat-form-field>
-            <textarea matInput formControlName="saying" placeholder="email" #email
+            <textarea matInput formControlName="email" placeholder="Your email or alert" #email
             (keyup.esc)="close()" (keyup.enter)="saveAlert()"></textarea>
           </mat-form-field>
         </div>

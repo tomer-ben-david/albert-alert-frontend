@@ -23,7 +23,7 @@ export class AlertDetailComponent implements OnChanges {
   @Input() alert: Alert;
   @Input() commands: MasterDetailCommands<Alert>;
 
-  @ViewChild('name') nameElement: ElementRef;
+  @ViewChild('symbol') nameElement: ElementRef;
 
   addMode = false;
   form = this.fb.group({
