@@ -28,8 +28,8 @@ export class AlertDetailComponent implements OnChanges {
   addMode = false;
   form = this.fb.group({
     id: [],
-    name: ['', Validators.required],
-    saying: ['']
+    symbol: ['', Validators.required],
+    email: ['']
   });
 
   constructor(private fb: FormBuilder) {}
