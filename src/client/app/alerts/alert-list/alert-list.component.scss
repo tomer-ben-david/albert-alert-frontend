@@ -1,0 +1,9 @@
+@import '../../../styles/mixin';
+
+.alerts {
+  @include item-list;
+}
+
+.mat-card {
+  @include mat-card-layout;
+}

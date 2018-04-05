@@ -20,6 +20,11 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
       // You must specify the root as part of the resource URL.
       entityResourceUrl: 'api/hero/',
       collectionResourceUrl: 'api/heroes/'
+    },
+    Alert: {
+      // You must specify the root as part of the resource URL.
+      entityResourceUrl: 'api/alert/',
+      collectionResourceUrl: 'api/alerts/'
     }
   },
 

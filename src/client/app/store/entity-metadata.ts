@@ -1,24 +1,33 @@
-import { defaultSelectId, EntityMetadataMap, PropsFilterFnFactory } from 'ngrx-data';
+import {
+  defaultSelectId,
+  EntityMetadataMap,
+  PropsFilterFnFactory
+} from 'ngrx-data';
 
 export const entityMetadata: EntityMetadataMap = {
   Hero: {
-    filterFn: nameFilter,    // optional
+    filterFn: nameFilter, // optional
     sortComparer: sortByName // optional
   },
 
   Villain: {
-    selectId: villainSelectId,  //  a non-default function
+    selectId: villainSelectId, //  a non-default function
     filterFn: nameAndSayingFilter,
 
     // Performs optimistic add and update. See VillainsService
     entityDispatcherOptions: { optimisticAdd: true, optimisticUpdate: true }
+  },
+  Alert: {
+    filterFn: nameFilter, // optional
+    sortComparer: sortByName // optional
   }
 };
 
 export const pluralNames = {
   // Not needed for data access when set Hero's HttpResourceUrls; see `entity-store.module.ts`.
   // Case matters. Match the case of the entity name.
-  Hero: 'Heroes'
+  Hero: 'Heroes',
+  Alert: 'Alerts'
 };
 
 // Can't just put the function in the entityMetadata literal

@@ -1,0 +1,22 @@
+<div class="control-panel">
+  <div class="button-panel">
+    <button mat-raised-button color="primary" type="button" (click)="getAlerts()" matTooltip="Refresh the alerts">Refresh</button>
+    <button mat-raised-button color="primary" type="button" (click)="enableAddMode()" *ngIf="!selectedAlert" matTooltip="Add a new alert">Add</button>
+  </div>
+  <app-filter [filterObserver]="filterObserver" filterPlaceholder="Filter by each alert's name"
+    class="filter-panel"></app-filter>
+</div>
+<div class="content-container">
+  <div class="list-container">
+    <div *ngIf="filteredAlerts$ | async as alerts">
+      <mat-spinner *ngIf="loading$ | async;else alertList" mode="indeterminate" color="accent"></mat-spinner>
+      <ng-template #alertList>
+        <app-alert-list [alerts]="alerts" [selectedAlert]="selectedAlert" [commands]="commands"></app-alert-list>
+      </ng-template>
+    </div>
+  </div>
+  <div class="detail-container">
+    <app-alert-detail *ngIf="selectedAlert" [alert]="selectedAlert" [commands]="commands">
+    </app-alert-detail>
+  </div>
+</div>

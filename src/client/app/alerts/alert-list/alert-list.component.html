@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Alerts</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul class="alerts">
+      <li *ngFor="let alert of alerts; trackBy: byId" class="item-container">
+        <button mat-button mat-suffix mat-icon-button color="accent" class="delete-button" aria-label="Delete" (click)="deleteAlert(alert)"
+          matTooltip="Delete the alert">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div class="selectable-item" [class.selected]="alert === selectedAlert">
+          <div class="badge">{{alert.id}}</div>
+          <div class="item-text" (click)="onSelect(alert)">
+            <div class="name">{{alert.symbol}}</div>
+            <div class="saying">{{alert.email}}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
